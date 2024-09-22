@@ -25,10 +25,14 @@ import _http from "@/libs/http";
 
 type FormSchema = z.infer<typeof projectValidation>;
 
-export default function CreateProject() {
+type Props = {
+  handlerData: () => void;
+};
+
+export default function CreateProject({ handlerData }: Props) {
   const location = useLocation();
   const currentPath = location.pathname;
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("Software");
 
@@ -82,6 +86,7 @@ export default function CreateProject() {
 
       if (response.status === 201) {
         toast.success("Create project success!");
+        handlerData();
         handleClose();
       }
     } catch (err) {
@@ -184,11 +189,6 @@ export default function CreateProject() {
                     </MenuItem>
                   ))}
                 </Select>
-                {errors.category && (
-                  <Typography variant="body2" color="error">
-                    {errors.category.message}
-                  </Typography>
-                )}
               </Stack>
 
               <Stack direction="column">
