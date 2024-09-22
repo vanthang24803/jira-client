@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 
 import { toast } from "sonner";
 import _http from "@/libs/http";
-import type { LoginFormSchema } from "@/pages/Auth/Login/LoginForm";
+import type { LoginFormSchema } from "@/components/LoginForm";
 
 import { Profile } from "@/types";
 
@@ -39,6 +39,9 @@ const useAuth = create(
         } catch (error: any) {
           console.error("Login failed:", error);
           if (error.response && error.response.status === 400) {
+            toast.error(error.response.data.error);
+          }
+          if (error.response && error.response.status === 403) {
             toast.error(error.response.data.error);
           }
           throw error;

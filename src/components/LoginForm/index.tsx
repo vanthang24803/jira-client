@@ -1,12 +1,13 @@
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { loginValidation } from "@/validations/auth";
 import { z } from "zod";
 import _http from "@/libs/http";
 import { useState } from "react";
 import useAuth from "@/hooks/use-auth";
+import { useForm } from "react-hook-form";
+import { loginValidation } from "@/validations/auth";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
 
 import CircularProgress from "@mui/material/CircularProgress";
 
@@ -35,6 +36,7 @@ export default function LoginForm() {
     try {
       setLoading(true);
       await login(data);
+      form.reset();
     } catch (error) {
       console.error(error);
     } finally {

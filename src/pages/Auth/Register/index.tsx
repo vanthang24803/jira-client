@@ -1,12 +1,13 @@
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import Divider from "@mui/material/Divider";
+import Typography from "@mui/material/Typography";
+
 import { Link } from "react-router-dom";
 
 import GoogleIcon from "@/assets/google.svg";
 
-import Stack from "@mui/material/Stack";
+import RegisterForm from "@/components/RegisterForm";
 
 export default function Register() {
   return (
@@ -15,73 +16,12 @@ export default function Register() {
         Sign up to continue
       </Typography>
 
-      <Box sx={{ mt: 2, width: "80%" }}></Box>
+      <RegisterForm />
 
-      <Stack sx={{ width: "80%", mt: 2 }} direction="row" spacing={2}>
-        <TextField
-          label="First name"
-          variant="outlined"
-          size="small"
-          sx={{ mt: 2, width: "80%" }}
-          InputLabelProps={{ sx: { fontSize: 14 } }}
-          inputProps={{ style: { fontSize: 14, height: "22px" } }}
-        />
-        <TextField
-          label="Last name"
-          variant="outlined"
-          size="small"
-          sx={{ mt: 2, width: "80%" }}
-          InputLabelProps={{ sx: { fontSize: 14 } }}
-          inputProps={{ style: { fontSize: 14, height: "22px" } }}
-        />
-      </Stack>
-
-      <TextField
-        label="Email"
-        variant="outlined"
-        size="small"
-        sx={{ mt: 2, width: "80%" }}
-        InputLabelProps={{ sx: { fontSize: 14 } }}
-        inputProps={{ style: { fontSize: 14, height: "22px" } }}
-      />
-      <TextField
-        label="Password"
-        variant="outlined"
-        size="small"
-        sx={{ mt: 2, width: "80%" }}
-        InputLabelProps={{ sx: { fontSize: 14 } }}
-        inputProps={{ style: { fontSize: 14, height: "22px" } }}
-        type="password"
-      />
+      <Divider sx={{ pt: 2, width: "80%" }} />
 
       <Typography
-        sx={{
-          fontWeight: 400,
-          pt: 1,
-          width: "80%",
-          color: "rgb(6 78 59)",
-          fontSize: 11,
-        }}
-      >
-        By signing up, I accept the Atlassian Cloud Terms of Service and
-        acknowledge the Privacy Policy.
-      </Typography>
-
-      <Button
-        variant="contained"
-        sx={{
-          mt: 2,
-          width: "80%",
-          fontSize: 14,
-          textTransform: "none",
-          boxShadow: "none",
-          height: "36px",
-        }}
-      >
-        Sign up
-      </Button>
-      <Typography
-        sx={{ fontWeight: 500, pt: 3, color: "rgb(6 78 59)", fontSize: 14 }}
+        sx={{ fontWeight: 500, pt: 2, color: "rgb(6 78 59)", fontSize: 14 }}
       >
         Or continue with
       </Typography>
