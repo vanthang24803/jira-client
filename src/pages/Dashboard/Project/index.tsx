@@ -1,7 +1,18 @@
-import useAuth from "@/hooks/use-auth";
+import Stack from "@mui/material/Stack";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import CreateProject from "@/components/CreateProject";
 
 export default function Projects() {
-  const { profile } = useAuth();
+  return (
+    <Box p={4}>
+      <Stack direction="row" alignItems="center" justifyContent="space-between">
+        <Typography variant="h5" fontWeight={500}>
+          Project
+        </Typography>
 
-  return <>{JSON.stringify(profile)}</>;
+        <CreateProject />
+      </Stack>
+    </Box>
+  );
 }
