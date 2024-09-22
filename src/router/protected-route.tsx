@@ -1,8 +1,9 @@
+import useAuth from "@/hooks/use-auth";
 import { PropsWithChildren, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function ProtectedRoute({ children }: PropsWithChildren) {
-  const isLogin = false;
+  const { isLogin } = useAuth();
 
   const navigate = useNavigate();
 
@@ -10,7 +11,7 @@ export default function ProtectedRoute({ children }: PropsWithChildren) {
     if (!isLogin) {
       navigate("/login");
     } else {
-      navigate("/123");
+      navigate("/dashboard/project");
     }
   }, [navigate, isLogin]);
 
