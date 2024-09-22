@@ -11,7 +11,7 @@ const theme = createTheme({
       defaultProps: {
         InputLabelProps: { sx: { fontSize: "0.875rem" } },
         inputProps: {
-          style: { fontSize: "0.875rem", height: "22px" },
+          style: { fontSize: "0.875rem", height: "20px" },
           autoComplete: "off",
         },
         FormHelperTextProps: {
@@ -25,6 +25,13 @@ const theme = createTheme({
           fontSize: "24px",
           color: "#64686e",
           cursor: "pointer",
+        },
+      },
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: "none",
         },
       },
     },
