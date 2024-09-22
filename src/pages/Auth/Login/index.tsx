@@ -1,11 +1,11 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import { Link } from "react-router-dom";
+import Stack from "@mui/material/Stack";
+import LoginForm from "./LoginForm";
 
+import { Link } from "react-router-dom";
 import GoogleIcon from "@/assets/google.svg";
-import { Stack } from "@mui/material";
 
 export default function Login() {
   return (
@@ -14,35 +14,8 @@ export default function Login() {
         Log in to continue
       </Typography>
 
-      <TextField
-        label="Email"
-        variant="outlined"
-        size="small"
-        sx={{ mt: 2, width: "80%" }}
-        InputLabelProps={{ sx: { fontSize: 14 } }}
-        inputProps={{ style: { fontSize: 14, height: "22px" } }}
-      />
-      <TextField
-        label="Password"
-        variant="outlined"
-        size="small"
-        sx={{ mt: 2, width: "80%" }}
-        InputLabelProps={{ sx: { fontSize: 14 } }}
-        inputProps={{ style: { fontSize: 14, height: "22px" } }}
-      />
-      <Button
-        variant="contained"
-        sx={{
-          mt: 2,
-          width: "80%",
-          fontSize: 14,
-          textTransform: "none",
-          boxShadow: "none",
-          height: "36px",
-        }}
-      >
-        Continue
-      </Button>
+      <LoginForm />
+
       <Typography
         sx={{ fontWeight: 500, pt: 3, color: "rgb(6 78 59)", fontSize: 14 }}
       >

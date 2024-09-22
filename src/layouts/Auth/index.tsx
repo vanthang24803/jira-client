@@ -3,6 +3,7 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 
 import Logo from "@/assets/logo.svg";
+import Divider from "@mui/material/Divider";
 import LogoDisable from "@/assets/logo-disable.svg";
 import { Outlet } from "react-router-dom";
 
@@ -46,7 +47,7 @@ export default function AuthLayout() {
         />
         <Outlet />
 
-        <Box sx={{ width: "80%", border: "0.25px solid #d0d3d9" }} />
+        <Divider />
 
         <Box
           component="img"
