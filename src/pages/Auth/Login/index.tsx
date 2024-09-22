@@ -2,7 +2,8 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
-import LoginForm from "./LoginForm";
+import LoginForm from "@/components/LoginForm";
+import Divider from "@mui/material/Divider";
 
 import { Link } from "react-router-dom";
 import GoogleIcon from "@/assets/google.svg";
@@ -16,8 +17,9 @@ export default function Login() {
 
       <LoginForm />
 
+      <Divider sx={{ pt: 2, width: "80%" }} />
       <Typography
-        sx={{ fontWeight: 500, pt: 3, color: "rgb(6 78 59)", fontSize: 14 }}
+        sx={{ fontWeight: 500, pt: 2, color: "rgb(6 78 59)", fontSize: 14 }}
       >
         Or continue with
       </Typography>
@@ -47,7 +49,7 @@ export default function Login() {
           sx={{ fontWeight: 600, ml: 1, color: "black", fontSize: 14 }}
         >
           Google
-        </Typography>{" "}
+        </Typography>
       </Button>
 
       <Stack
