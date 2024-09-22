@@ -19,6 +19,15 @@ const theme = createTheme({
         },
       },
     },
+    MuiSvgIcon: {
+      styleOverrides: {
+        root: {
+          fontSize: "24px",
+          color: "#64686e",
+          cursor: "pointer",
+        },
+      },
+    },
   },
 });
 
