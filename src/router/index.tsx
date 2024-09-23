@@ -5,6 +5,9 @@ import ProtectedRoute from "./protected-route";
 import AuthLayout from "@/layouts/Auth";
 import Projects from "@/pages/Dashboard/Project";
 import DashboardLayout from "@/layouts/Dashboard";
+import ProjectBoard from "@/pages/Dashboard/Project/_id";
+import ProjectLayout from "@/layouts/Project";
+import ProjectSetting from "@/pages/Dashboard/Project/setting";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +39,22 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/project",
         element: <Projects />,
+      },
+      {
+        path: "/dashboard/project/:slug/board",
+        element: (
+          <ProjectLayout>
+            <ProjectBoard />
+          </ProjectLayout>
+        ),
+      },
+      {
+        path: "/dashboard/project/:slug/setting",
+        element: (
+          <ProjectLayout>
+            <ProjectSetting />
+          </ProjectLayout>
+        ),
       },
     ],
   },

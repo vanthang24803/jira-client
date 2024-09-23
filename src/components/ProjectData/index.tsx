@@ -239,7 +239,7 @@ export default function ProjectData({ data }: Props) {
                 <TableRow key={project._id}>
                   <TableCell>
                     <Link
-                      to={`${project.url}`}
+                      to={`${project.url}/board`}
                       style={{ textDecoration: "none", color: "inherit" }}
                     >
                       {project.name}
@@ -263,10 +263,10 @@ export default function ProjectData({ data }: Props) {
                   </TableCell>
                   <TableCell>
                     <Link
-                      to={`${project.url}`}
+                      to={`${project.url}/board`}
                       style={{ textDecoration: "none", color: "inherit" }}
                     >
-                      {window.location.href}/{project.url}
+                      {window.location.href}/{project.url}/board
                     </Link>
                   </TableCell>
                   <TableCell>
