@@ -13,6 +13,17 @@ const categories = [
   },
 ];
 
+const roles = [
+  {
+    value: "Member",
+    name: "Member",
+  },
+  {
+    value: "Viewer",
+    name: "Viewer",
+  },
+];
+
 const menuItems = [
   {
     label: "Board",
@@ -87,4 +98,4 @@ const disableItems = [
   },
 ];
 
-export { categories, disableItems, menuItems };
+export { categories, disableItems, menuItems, roles };
