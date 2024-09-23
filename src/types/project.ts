@@ -15,6 +15,7 @@ export type ProjectDetail = Base & {
   name: string;
   url: string;
   category: ProjectCategory;
+  description: string;
   pm: Member;
   members: Member[];
   tasks: Task[];

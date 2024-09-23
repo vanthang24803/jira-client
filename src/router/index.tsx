@@ -5,9 +5,9 @@ import ProtectedRoute from "./protected-route";
 import AuthLayout from "@/layouts/Auth";
 import Projects from "@/pages/Dashboard/Project";
 import DashboardLayout from "@/layouts/Dashboard";
-import ProjectBoard from "@/pages/Dashboard/Project/_id";
+import ProjectBoard from "@/pages/Dashboard/Project/Board";
 import ProjectLayout from "@/layouts/Project";
-import ProjectSetting from "@/pages/Dashboard/Project/setting";
+import ProjectSetting from "@/pages/Dashboard/Project/Setting";
 
 const router = createBrowserRouter([
   {
