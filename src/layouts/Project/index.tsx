@@ -8,7 +8,7 @@ export default function ProjectLayout({ children }: PropsWithChildren) {
   const { slug } = useParams();
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box>
       <Grid container spacing={2}>
         <Grid size={2}>
           <Sidebar slug={slug} />

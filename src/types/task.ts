@@ -12,6 +12,6 @@ export type Task = Base & {
   assignees: Member[];
 };
 
-type TaskLevel = "Lowest" | "Low" | "Medium" | "Highest" | "High";
-type TaskStatus = "Backlog" | "Process" | "Done";
-type TaskType = "Task" | "Bug" | "Story";
+export type TaskLevel = "Lowest" | "Low" | "Medium" | "Highest" | "High";
+export type TaskStatus = "Backlog" | "Process" | "Done" | "Develop";
+export type TaskType = "Task" | "Bug" | "Story";

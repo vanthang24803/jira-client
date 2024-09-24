@@ -15,6 +15,7 @@ import Avatar from "@mui/material/Avatar";
 import AvatarGroup from "@mui/material/AvatarGroup";
 import SearchIcon from "@mui/icons-material/Search";
 import AddMember from "@/components/AddMember";
+import BoardContainer from "@/components/BoardContainer";
 
 export default function ProjectBoard() {
   const { slug } = useParams();
@@ -80,6 +81,7 @@ export default function ProjectBoard() {
           </Stack>
         </Stack>
       </Stack>
+      <BoardContainer data={project?.data.result} />
     </Box>
   );
 }
