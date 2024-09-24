@@ -19,37 +19,37 @@ type Props = {
   data: Task | undefined;
 };
 
+export const getTaskIcon = (task: TaskType | undefined) => {
+  switch (task) {
+    case "Bug":
+      return BugIcon;
+    case "Story":
+      return StoryIcon;
+    case "Task":
+      return TaskIcon;
+    default:
+      return TaskIcon;
+  }
+};
+
+export const getTaskLevelIcon = (task: TaskLevel | undefined) => {
+  switch (task) {
+    case "High":
+      return HighIcon;
+    case "Highest":
+      return HighIcon;
+    case "Medium":
+      return MediumIcon;
+    case "Low":
+      return LowIcon;
+    case "Lowest":
+      return LowIcon;
+    default:
+      return MediumIcon;
+  }
+};
+
 export default function BoardItem({ data }: Props) {
-  const getTaskIcon = (task: TaskType | undefined) => {
-    switch (task) {
-      case "Bug":
-        return BugIcon;
-      case "Story":
-        return StoryIcon;
-      case "Task":
-        return TaskIcon;
-      default:
-        return TaskIcon;
-    }
-  };
-
-  const getTaskLevelIcon = (task: TaskLevel | undefined) => {
-    switch (task) {
-      case "High":
-        return HighIcon;
-      case "Highest":
-        return HighIcon;
-      case "Medium":
-        return MediumIcon;
-      case "Low":
-        return LowIcon;
-      case "Lowest":
-        return LowIcon;
-      default:
-        return MediumIcon;
-    }
-  };
-
   return (
     <Card
       variant="outlined"
@@ -136,22 +136,15 @@ export default function BoardItem({ data }: Props) {
                   },
                 }}
               >
-                <Tooltip title="Remy Sharp">
+                {/* {data.assignees.map((item) => (
+                  <Tooltip key={item._id} title={item.fullName}>
+                    <Avatar alt={item.fullName} src={item.avatar} />
+                  </Tooltip>
+                ))} */}
+                <Tooltip title={data.reporter.fullName}>
                   <Avatar
-                    alt="Remy Sharp"
-                    src="https://i.pinimg.com/474x/fb/6c/21/fb6c2120eee711a3d7f67b9582d4c222.jpg"
-                  />
-                </Tooltip>
-                <Tooltip title="Travis Howard">
-                  <Avatar
-                    alt="Remy Sharp"
-                    src="https://i.pinimg.com/236x/2d/39/4d/2d394ddaa1896dd3dfae0625f76fc272.jpg"
-                  />
-                </Tooltip>
-                <Tooltip title="Remy Sharp">
-                  <Avatar
-                    alt="Remy Sharp"
-                    src="https://i.pinimg.com/474x/fb/6c/21/fb6c2120eee711a3d7f67b9582d4c222.jpg"
+                    alt={data.reporter.fullName}
+                    src={data.reporter.avatar}
                   />
                 </Tooltip>
               </AvatarGroup>

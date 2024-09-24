@@ -1,10 +1,9 @@
-import { Button, Stack, Tooltip, Typography } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid2";
 import BoardItem from "./BoardItem";
-import AddCardIcon from "@mui/icons-material/AddCard";
-import DragHandleIcon from "@mui/icons-material/DragHandle";
 import { Task } from "@/types";
+import AddTask from "../AddTask";
 
 type Props = {
   name: string;
@@ -22,7 +21,6 @@ export default function Board({ name, tasks }: Props) {
           borderRadius: "4px",
         }}
       >
-        {/* HEADER */}
         <Box py={1} px={2} height={50}>
           <Stack direction="row" alignItems="center" spacing={1}>
             <Typography
@@ -69,43 +67,7 @@ export default function Board({ name, tasks }: Props) {
             ))}
           </Stack>
         </Box>
-
-        {/* FOOTER */}
-        <Box
-          py={1}
-          px={2}
-          height={50}
-          display="flex"
-          alignItems="center"
-          justifyContent="space-between"
-        >
-          <Button
-            fullWidth
-            sx={{
-              fontSize: "0.85rem",
-              justifyContent: "flex-start",
-              letterSpacing: "-0.05em",
-              px: 2,
-            }}
-            startIcon={
-              <AddCardIcon
-                sx={{
-                  color: "#2563eb",
-                }}
-              />
-            }
-          >
-            Add new card
-          </Button>
-          <Tooltip
-            title="Drag to move"
-            sx={{
-              cursor: "pointer",
-            }}
-          >
-            <DragHandleIcon />
-          </Tooltip>
-        </Box>
+        <AddTask />
       </Box>
     </Grid>
   );

@@ -24,6 +24,63 @@ const roles = [
   },
 ];
 
+const taskTypes = [
+  {
+    value: "Task",
+    name: "Task",
+  },
+  {
+    value: "Bug",
+    name: "Bug",
+  },
+  {
+    value: "Story",
+    name: "Story",
+  },
+];
+
+const taskStatus = [
+  {
+    value: "Backlog",
+    name: "Backlog",
+  },
+  {
+    value: "Process",
+    name: "Process",
+  },
+  {
+    value: "Done",
+    name: "Done",
+  },
+  {
+    value: "Develop",
+    name: "Develop",
+  },
+];
+
+const taskLevel = [
+  {
+    value: "Lowest",
+    name: "Lowest",
+  },
+  {
+    value: "Low",
+    name: "Low",
+  },
+  {
+    value: "Medium",
+    name: "Medium",
+  },
+  {
+    value: "High",
+    name: "High",
+  },
+  {
+    value: "Highest",
+    name: "Highest",
+  },
+];
+
 const menuItems = [
   {
     label: "Board",
@@ -98,4 +155,12 @@ const disableItems = [
   },
 ];
 
-export { categories, disableItems, menuItems, roles };
+export {
+  categories,
+  disableItems,
+  menuItems,
+  roles,
+  taskTypes,
+  taskStatus,
+  taskLevel,
+};
