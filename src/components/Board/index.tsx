@@ -21,6 +21,7 @@ export default function Board({ name, tasks }: Props) {
           borderRadius: "4px",
         }}
       >
+        {/* HEADER */}
         <Box py={1} px={2} height={50}>
           <Stack direction="row" alignItems="center" spacing={1}>
             <Typography

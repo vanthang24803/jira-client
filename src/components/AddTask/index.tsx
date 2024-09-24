@@ -64,6 +64,7 @@ export default function AddTask() {
       assignees: selectedAssignees,
       name: summary,
       description,
+      status: "Backlog",
     };
     try {
       setLoading(true);

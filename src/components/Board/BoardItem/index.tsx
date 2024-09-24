@@ -14,6 +14,7 @@ import { Box, Stack, Tooltip } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import AvatarGroup from "@mui/material/AvatarGroup";
 import UserIcon from "@/components/AddMember/icon";
+import TaskDetail from "@/components/TaskDetail";
 
 type Props = {
   data: Task | undefined;
@@ -50,6 +51,16 @@ export const getTaskLevelIcon = (task: TaskLevel | undefined) => {
 };
 
 export default function BoardItem({ data }: Props) {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <Card
       variant="outlined"
@@ -62,6 +73,7 @@ export default function BoardItem({ data }: Props) {
     >
       <React.Fragment>
         <CardContent
+          onClick={handleClickOpen}
           sx={{
             px: "12px",
             cursor: "pointer",
@@ -136,11 +148,6 @@ export default function BoardItem({ data }: Props) {
                   },
                 }}
               >
-                {/* {data.assignees.map((item) => (
-                  <Tooltip key={item._id} title={item.fullName}>
-                    <Avatar alt={item.fullName} src={item.avatar} />
-                  </Tooltip>
-                ))} */}
                 <Tooltip title={data.reporter.fullName}>
                   <Avatar
                     alt={data.reporter.fullName}
@@ -164,6 +171,7 @@ export default function BoardItem({ data }: Props) {
             )}
           </Stack>
         </CardContent>
+        <TaskDetail id={data?._id} handleClose={handleClose} open={open} />
       </React.Fragment>
     </Card>
   );
