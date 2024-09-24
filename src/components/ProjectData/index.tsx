@@ -22,6 +22,7 @@ import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import SearchIcon from "@mui/icons-material/Search";
 import { categories } from "@/constant";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
+import { Link } from "react-router-dom";
 
 type SortKey = keyof Project;
 
@@ -235,8 +236,15 @@ export default function ProjectData({ data }: Props) {
             {sortedData
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((project) => (
-                <TableRow key={project.id}>
-                  <TableCell>{project.name}</TableCell>
+                <TableRow key={project._id}>
+                  <TableCell>
+                    <Link
+                      to={`${project.url}/board`}
+                      style={{ textDecoration: "none", color: "inherit" }}
+                    >
+                      {project.name}
+                    </Link>
+                  </TableCell>
                   <TableCell>{project.category}</TableCell>
                   <TableCell>{project.members}</TableCell>
                   <TableCell>{project.tasks}</TableCell>
@@ -247,13 +255,20 @@ export default function ProjectData({ data }: Props) {
                           width: 32,
                           height: 32,
                         }}
-                        src={project.createdBy.avatar}
-                        alt={`${project.createdBy.firstName} ${project.createdBy.lastName}`}
+                        src={project.pm.avatar}
+                        alt={`${project.pm.fullName}`}
                       />
-                      <Typography>{`${project.createdBy.firstName} ${project.createdBy.lastName}`}</Typography>
+                      <Typography>{`${project.pm.fullName}`}</Typography>
                     </Stack>
                   </TableCell>
-                  <TableCell>{project.url}</TableCell>
+                  <TableCell>
+                    <Link
+                      to={`${project.url}/board`}
+                      style={{ textDecoration: "none", color: "inherit" }}
+                    >
+                      {window.location.href}/{project.url}/board
+                    </Link>
+                  </TableCell>
                   <TableCell>
                     {format(new Date(project.createdAt), "dd/MM/yyyy hh:mm")}
                   </TableCell>

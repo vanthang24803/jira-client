@@ -1,5 +1,5 @@
 export type Base = {
-  id: string;
+  _id: string;
   createdAt: string;
   updatedAt: string;
 };

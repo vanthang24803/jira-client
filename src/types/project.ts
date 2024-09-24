@@ -1,11 +1,24 @@
 import { Base } from "./base";
-import { Profile } from "./profile";
+import { Member } from "./member";
+import { Task } from "./task";
 
 export type Project = Base & {
   name: string;
   url: string;
-  createdBy: Profile;
-  category: string;
+  pm: Member;
+  category: ProjectCategory;
   members: number;
   tasks: number;
 };
+
+export type ProjectDetail = Base & {
+  name: string;
+  url: string;
+  category: ProjectCategory;
+  description: string;
+  pm: Member;
+  members: Member[];
+  tasks: Task[];
+};
+
+export type ProjectCategory = "Software" | "Marketing" | "Business";

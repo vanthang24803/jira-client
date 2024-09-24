@@ -82,7 +82,10 @@ export default function CreateProject({ handlerData }: Props) {
   const onSubmit = async (data: FormSchema) => {
     try {
       setLoading(true);
-      const response = await _http.post(`/projects`, data);
+      const response = await _http.post(`/projects`, {
+        ...data,
+        url: slugify(name),
+      });
 
       if (response.status === 201) {
         toast.success("Create project success!");
