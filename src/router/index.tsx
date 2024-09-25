@@ -8,6 +8,7 @@ import DashboardLayout from "@/layouts/Dashboard";
 import ProjectBoard from "@/pages/Dashboard/Project/Board";
 import ProjectLayout from "@/layouts/Project";
 import ProjectSetting from "@/pages/Dashboard/Project/Setting";
+import ProjectReport from "@/pages/Dashboard/Project/Report";
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,14 @@ const router = createBrowserRouter([
         element: (
           <ProjectLayout>
             <ProjectSetting />
+          </ProjectLayout>
+        ),
+      },
+      {
+        path: "/dashboard/project/:slug/report",
+        element: (
+          <ProjectLayout>
+            <ProjectReport />
           </ProjectLayout>
         ),
       },
