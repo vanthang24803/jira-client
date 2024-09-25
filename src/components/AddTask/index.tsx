@@ -70,7 +70,7 @@ export default function AddTask() {
       setLoading(true);
 
       await _http.post(
-        `/projects/${project?.data.result._id}/tasks`,
+        `/projects/${project?.data.result.url}/tasks`,
         jsonSender
       );
 

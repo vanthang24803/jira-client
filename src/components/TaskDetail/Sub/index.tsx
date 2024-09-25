@@ -9,6 +9,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import _http from "@/libs/http";
 import { useQueryClient } from "@tanstack/react-query";
+import { useParams } from "react-router-dom";
 
 type Props = {
   data: Task | undefined;
@@ -16,6 +17,8 @@ type Props = {
 
 export default function SubTaskDetail({ data }: Props) {
   const queryClient = useQueryClient();
+  const { slug } = useParams();
+
   const refetchAllQueries = () => queryClient.invalidateQueries();
 
   const [selectedType, setSelectedType] = useState<TaskType>(
@@ -32,7 +35,7 @@ export default function SubTaskDetail({ data }: Props) {
     const updatedData = { ...data, [field]: value };
 
     try {
-      await _http.put(`/projects/${data?._id}/tasks/${data?._id}`, updatedData);
+      await _http.put(`/projects/${slug}/tasks/${data?._id}`, updatedData);
       refetchAllQueries();
       switch (field) {
         case "status":
