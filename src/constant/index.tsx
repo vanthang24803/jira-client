@@ -107,6 +107,23 @@ const menuItems = [
       </svg>
     ),
   },
+  {
+    label: "Reports",
+    url: "report",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" role="presentation">
+        <g fill="currentcolor" fill-rule="evenodd">
+          <rect width="8" height="2" x="8" y="6" rx="1"></rect>
+          <rect width="8" height="2" x="8" y="9" rx="1"></rect>
+          <rect width="4" height="2" x="8" y="12" rx="1"></rect>
+          <path
+            fill-rule="nonzero"
+            d="M7 4v16h10V4zm-2-.01C5 2.892 5.897 2 7.006 2h9.988C18.102 2 19 2.898 19 3.99v16.02c0 1.099-.897 1.99-2.006 1.99H7.006A2.003 2.003 0 0 1 5 20.01z"
+          ></path>
+        </g>
+      </svg>
+    ),
+  },
 ];
 
 const disableItems = [
@@ -120,36 +137,6 @@ const disableItems = [
           fill-rule="evenodd"
           d="M6 2h10a3 3 0 0 1 0 6H6a3 3 0 1 1 0-6m0 2a1 1 0 1 0 0 2h10a1 1 0 0 0 0-2zm4 5h8a3 3 0 0 1 0 6h-8a3 3 0 0 1 0-6m0 2a1 1 0 0 0 0 2h8a1 1 0 0 0 0-2zm-4 5h6a3 3 0 0 1 0 6H6a3 3 0 0 1 0-6m0 2a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2z"
         ></path>
-      </svg>
-    ),
-  },
-  {
-    label: "Reports",
-    url: "#",
-    icon: (
-      <svg
-        fill="#000000"
-        xmlns="http://www.w3.org/2000/svg"
-        width="24px"
-        height="24px"
-        viewBox="0 0 100 100"
-      >
-        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-        <g
-          id="SVGRepo_tracerCarrier"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></g>
-        <g id="SVGRepo_iconCarrier">
-          <g>
-            <g>
-              <path d="M39,32h22c1.1,0,2-0.9,2-2v-4c0-3.3-2.7-6-6-6H43c-3.3,0-6,2.7-6,6v4C37,31.1,37.9,32,39,32z"></path>
-            </g>
-            <g>
-              <path d="M72,25h-2c-0.6,0-1,0.4-1,1v4c0,4.4-3.6,8-8,8H39c-4.4,0-8-3.6-8-8v-4c0-0.6-0.4-1-1-1h-2c-3.3,0-6,2.7-6,6 v43c0,3.3,2.7,6,6,6h44c3.3,0,6-2.7,6-6V31C78,27.7,75.3,25,72,25z M43,66c0,1.1-0.9,2-2,2h-2c-1.1,0-2-0.9-2-2V56 c0-1.1,0.9-2,2-2h2c1.1,0,2,0.9,2,2V66z M53,66c0,1.1-0.9,2-2,2h-2c-1.1,0-2-0.9-2-2V47c0-1.1,0.9-2,2-2h2c1.1,0,2,0.9,2,2V66z M63,66c0,1.1-0.9,2-2,2h-2c-1.1,0-2-0.9-2-2V51c0-1.1,0.9-2,2-2h2c1.1,0,2,0.9,2,2V66z"></path>
-            </g>
-          </g>
-        </g>
       </svg>
     ),
   },
