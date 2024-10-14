@@ -172,7 +172,7 @@ export default function ProjectSetting() {
               sx={{ width: "200px", margin: "1rem 0" }}
               type="submit"
             >
-              {loading ? <CircularProgress size={16} /> : "Submit"}
+              {loading ? <CircularProgress size={16} /> : "Save changes"}
             </Button>
           </form>
         </Stack>

@@ -1,3 +1,5 @@
+import Comments from "@/components/Comments";
+import CreateComment from "@/components/CreateComment";
 import _http from "@/libs/http";
 import { Task } from "@/types";
 import { Box, Button, TextField, Typography } from "@mui/material";
@@ -10,6 +12,7 @@ import { toast } from "sonner";
 
 type Props = {
   data: Task | undefined;
+  slug: string | undefined;
 };
 
 export default function MainTaskDetail({ data }: Props) {
@@ -123,7 +126,10 @@ export default function MainTaskDetail({ data }: Props) {
         >
           Comments
         </Typography>
-        <Box width="100%" height="10vh"></Box>
+        <Box display="flex" flexDirection="column" gap={1}>
+          <CreateComment taskId={data?._id} slug={slug} />
+          <Comments taskId={data?._id} slug={slug} />
+        </Box>
       </Box>
     </Grid>
   );

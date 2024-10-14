@@ -102,7 +102,7 @@ export default function TaskDetail({ id, open, handleClose }: Props) {
       </DialogTitle>
       <DialogContent>
         <Grid container>
-          <MainTaskDetail data={task?.data.result} />
+          <MainTaskDetail data={task?.data.result} slug={slug} />
           <SubTaskDetail data={task?.data.result} />
         </Grid>
       </DialogContent>
