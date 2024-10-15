@@ -61,7 +61,7 @@ To run this project locally, follow these steps:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/jira-client.git
+git clone https://github.com/vanthang24803/jira-client.git
 ```
 
 2. Navigate to the project directory:
@@ -88,13 +88,20 @@ Once you have installed the dependencies and set the environment variables, you 
 yarn dev
 ```
 
+3. Running on Docker
+
+```bash
+docker-compose up -d
+
+```
+
 This will start the React application, and you can view it by navigating to http://localhost:3001 in your browser.
 
-License
+## License
+
 This project is open-source and available under the MIT License.
 
 ## Screenshots
+
 ![image](https://github.com/user-attachments/assets/87297184-1419-4ade-9aaf-9f851342d38f)
 ![image](https://github.com/user-attachments/assets/7722170b-5c37-459e-b587-a64ef4a3fa87)
-
-
