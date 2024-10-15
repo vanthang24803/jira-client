@@ -94,3 +94,7 @@ License
 This project is open-source and available under the MIT License.
 
 ## Screenshots
+![image](https://github.com/user-attachments/assets/87297184-1419-4ade-9aaf-9f851342d38f)
+![image](https://github.com/user-attachments/assets/7722170b-5c37-459e-b587-a64ef4a3fa87)
+
+
