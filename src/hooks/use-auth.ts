@@ -69,7 +69,7 @@ const useAuth = create(
 
       logout: async () => {
         try {
-          const response = await _http.post("/auth/logout", {
+          const response = await _http.post("/me/logout", {
             token: Cookies.get("ac_token"),
           });
           if (response.status === 200) {

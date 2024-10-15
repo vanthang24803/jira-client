@@ -10,6 +10,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import { Fragment, useState } from "react";
 import _http from "@/libs/http";
 import { toast } from "sonner";
+import UpdateComment from "../UpdateComment";
 
 type Props = {
   comment: Comment | undefined;
@@ -21,6 +22,9 @@ type Props = {
 export default function CommentItem({ comment, slug, taskId, reload }: Props) {
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [isUpdate, setIsUpdate] = useState(false);
+
+  const handleToggle = () => setIsUpdate(!isUpdate);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -70,34 +74,48 @@ export default function CommentItem({ comment, slug, taskId, reload }: Props) {
             </Typography>
           </Box>
           <Box display="flex" flexDirection="column">
-            <Typography sx={{ fontSize: "14px" }}>
-              {comment?.content}
-            </Typography>
-            <Box display="flex" alignItems="center" gap={2}>
-              <Typography
-                fontSize={13}
-                sx={{
-                  cursor: "pointer",
-                  "&:hover": {
-                    textDecoration: "underline",
-                  },
-                }}
-              >
-                Edit
+            {isUpdate ? (
+              <UpdateComment
+                reload={reload}
+                slug={slug}
+                taskId={taskId}
+                comment={comment}
+                handleToggle={handleToggle}
+              />
+            ) : (
+              <Typography sx={{ fontSize: "14px" }}>
+                {comment?.content}
               </Typography>
-              <Typography
-                fontSize={13}
-                sx={{
-                  cursor: "pointer",
-                  "&:hover": {
-                    textDecoration: "underline",
-                  },
-                }}
-                onClick={handleClickOpen}
-              >
-                Delete
-              </Typography>
-            </Box>
+            )}
+
+            {!isUpdate && (
+              <Box display="flex" alignItems="center" gap={2}>
+                <Typography
+                  fontSize={13}
+                  onClick={handleToggle}
+                  sx={{
+                    cursor: "pointer",
+                    "&:hover": {
+                      textDecoration: "underline",
+                    },
+                  }}
+                >
+                  Edit
+                </Typography>
+                <Typography
+                  fontSize={13}
+                  sx={{
+                    cursor: "pointer",
+                    "&:hover": {
+                      textDecoration: "underline",
+                    },
+                  }}
+                  onClick={handleClickOpen}
+                >
+                  Delete
+                </Typography>
+              </Box>
+            )}
           </Box>
         </Box>
       </Box>
